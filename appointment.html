@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Create Account</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        /* === Stylish Toggle Button Group for Categorical Inputs === */
+        .option-group {
+            display: flex;
+            gap: 10px;
+            margin: 8px 0 18px 0;
+            flex-wrap: wrap;
+        }
+
+        .option-group input[type="radio"] {
+            display: none;
+        }
+
+        .option-group label {
+            padding: 8px 16px;
+            border: 2px solid #4CAF50;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: 0.2s ease;
+            color: #4CAF50;
+        }
+
+        .option-group input[type="radio"]:checked + label {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        .form-box label {
+            margin-top: 10px;
+            display: block;
+            font-weight: 500;
+        }
+    </style>
+
+</head>
+<body>
+
+<header class="header">
+    <div class="logo">Healthify</div>
+    <nav class="nav-menu">
+        <a href="faq.html">FAQs</a>
+        <a href="index.html">About Us</a> <!-- ✅ Updated link -->
+    </nav>
+</header>
+
+<section class="form-section">
+    <div class="form-box">
+        <h2>Run Your Analysis</h2>
+
+        <!--  ADDED FORM ID -->
+        <form id="predictForm">
+
+            <!-- AGE -->
+            <label>Age</label>
+            <input type="number" name="age" placeholder="Enter your age" required>
+
+            <!-- SEX -->
+            <label>Sex</label>
+            <div class="option-group">
+                <input type="radio" id="male" name="sex" value="M" required>
+                <label for="male">M</label>
+
+                <input type="radio" id="female" name="sex" value="F">
+                <label for="female">F</label>
+            </div>
+
+            <!-- CHEST PAIN TYPE -->
+            <label>Chest Pain Type</label>
+            <div class="option-group">
+                <input type="radio" id="asy" name="cp" value="ASY" required>
+                <label for="asy">ASY</label>
+
+                <input type="radio" id="ta" name="cp" value="TA">
+                <label for="ta">TA</label>
+
+                <input type="radio" id="nap" name="cp" value="NAP">
+                <label for="nap">NAP</label>
+
+                <input type="radio" id="ata" name="cp" value="ATA">
+                <label for="ata">ATA</label>
+            </div>
+
+            <!-- RESTING BP -->
+            <label>Resting Blood Pressure</label>
+            <input type="number" name="restingbp" placeholder="Enter resting BP" required>
+
+            <!-- CHOLESTEROL -->
+            <label>Cholesterol</label>
+            <input type="number" name="cholesterol" placeholder="Enter cholesterol" required>
+
+            <!-- FASTING BS -->
+            <label>Fasting Blood Sugar</label>
+            <div class="option-group">
+                <input type="radio" id="fbs0" name="fbs" value="0" required>
+                <label for="fbs0">0</label>
+
+                <input type="radio" id="fbs1" name="fbs" value="1">
+                <label for="fbs1">1</label>
+            </div>
+
+            <!-- RESTING ECG -->
+            <label>Resting ECG</label>
+            <div class="option-group">
+                <input type="radio" id="ecg-normal" name="ecg" value="Normal" required>
+                <label for="ecg-normal">Normal</label>
+
+                <input type="radio" id="ecg-lvh" name="ecg" value="LVH">
+                <label for="ecg-lvh">LVH</label>
+
+                <input type="radio" id="ecg-st" name="ecg" value="ST">
+                <label for="ecg-st">ST</label>
+            </div>
+
+            <!-- MAX HR -->
+            <label>Maximum Heart Rate</label>
+            <input type="number" name="maxhr" placeholder="Enter max HR" required>
+
+            <!-- EXERCISE ANGINA -->
+            <label>Exercise Angina</label>
+            <div class="option-group">
+                <input type="radio" id="angina-y" name="angina" value="Y" required>
+                <label for="angina-y">Y</label>
+
+                <input type="radio" id="angina-n" name="angina" value="N">
+                <label for="angina-n">N</label>
+            </div>
+
+            <!-- OLD PEAK -->
+            <label>Old Peak</label>
+            <input type="number" step="0.1" name="oldpeak" placeholder="Enter old peak" required>
+
+            <!-- ST SLOPE -->
+            <label>ST Slope</label>
+            <div class="option-group">
+                <input type="radio" id="slope-flat" name="slope" value="Flat" required>
+                <label for="slope-flat">Flat</label>
+
+                <input type="radio" id="slope-up" name="slope" value="Up">
+                <label for="slope-up">Up</label>
+
+                <input type="radio" id="slope-down" name="slope" value="Down">
+                <label for="slope-down">Down</label>
+            </div>
+
+            <button type="submit" class="btn submit-btn">Get Result</button>
+        </form>
+
+        <!-- ⭐ ADDED RESULT BOX (NO STYLE CHANGE) -->
+        <h3 id="result" style="margin-top:20px;"></h3>
+
+    </div>
+</section>
+
+<footer class="footer">
+    <p>Thank You for Visit - Team Healthify</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
